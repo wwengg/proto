@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "github.com/wwengg/proto/pigeon";
+
+import "common/common.proto";
+
+package proto.pigeon;
+
+service RoomService {
+    rpc JoinRoom (JoinRoomArgs) returns (proto.common.Err) {}
+}
+
+enum RoomType {
+    ChatRoom = 0;
+    LiveRoom = 1;
+}
+
+message JoinRoomArgs {
+    int64 id = 1;
+    int64 roomId = 2;
+    RoomType roomType = 3;
+}

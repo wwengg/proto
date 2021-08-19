@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "github.com/wwengg/proto/identity";
+
+package proto.identity;
+
+import "common/common.proto";
+
+
+// The identity service definition.
+service Identity {
+  rpc GetId (proto.common.Empty) returns (GetIdReply) {}
+  rpc GetIds (GetIdsArgs) returns (GetIdsReply) {}
+}
+
+message GetIdReply {
+  int64 id = 1;
+}
+
+message GetIdsArgs {
+  int32 num = 1;  // 要获取的数量
+}
+
+message GetIdsReply {
+  repeated int64 ids = 1;
+}
