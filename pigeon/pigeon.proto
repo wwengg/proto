@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "github.com/wwengg/proto/pigeon";
+
+import "common/common.proto";
+
+package proto.pigeon;
+
+service PigeonService {
+    rpc PushMsgByUser (PushMsgByUserArgs) returns (proto.common.Err) {}  // 根据用户ID推送消息
+    rpc PushMsgByRoom (PushMsgByRoomArgs) returns (proto.common.Err) {}  // 根据房间、组id推送消息
+    rpc PushMsgByClient (PushMsgByClientArgs) returns (proto.common.Err) {}  // 根据连接ID推送消息
+}
+
+
+message PushMsgByUserArgs{
+    int64 uId = 1;
+    bytes jsonData = 2;
+}
+
+
+message PushMsgByRoomArgs{
+    int64 rId = 1;
+    bytes jsonData = 2;
+}
+
+
+message PushMsgByClientArgs{
+    int64 cId = 1;
+    bytes jsonData = 2;
+}

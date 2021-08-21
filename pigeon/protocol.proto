@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/wwengg/proto/pigeon";
+
+package proto.protocol;
+
+/*
+ * v1.0.0
+ * protocol
+ */
+message Proto {
+    uint32 dataLen = 1; // 包长
+    uint32 op = 2;   // 操作id
+    uint32 ver = 3;  // TCP版本号   1、不进行编码解码；2、需要编解码
+    uint32 seq = 4;  // 包id
+    bytes body = 5; // 包体  proto message
+}
