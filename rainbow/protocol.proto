@@ -4,8 +4,10 @@ option go_package = "github.com/wwengg/proto/rainbow";
 
 package proto.protocol;
 
+import "common/common.proto";
+
 message HttpReply {
-    uint32 code = 1;
+    proto.common.EnumErr code = 1;
     string message = 2;
     bytes data = 3;
 }

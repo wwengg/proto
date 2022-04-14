@@ -5,7 +5,8 @@ option go_package = "github.com/wwengg/proto/common";
 package proto.common;
 
 enum EnumErr {
-    SUCCESS = 0;
+    DEFAULT = 0;
+    SUCCESS = 200;
     ServerError = 1;
 
 
