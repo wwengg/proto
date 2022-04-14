@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "github.com/wwengg/proto/rainbow";
+
+package proto.protocol;
+
+message HttpReply {
+    uint32 code = 1;
+    string message = 2;
+    bytes data = 3;
+}
+
+
+message HttpArgs {
+    string service = 1;
+    string method = 2;
+    string token = 3;
+    uint64 uId = 4;
+    string sign = 5;
+
+    bytes data = 6;
+}
+
+
+
+

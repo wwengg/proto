@@ -6,9 +6,14 @@ package proto.common;
 
 enum EnumErr {
     SUCCESS = 0;
+    ServerError = 1;
+
 
     // pigeon
     JoinRoomErr = 201;
+
+    // rainbow
+    AuthErr = 8001;
 }
 
 message Empty {
@@ -17,4 +22,16 @@ message Empty {
 
 message Err {
     EnumErr err = 1;
+}
+
+
+message LoginArgs {
+    string key = 1;
+    string secret = 2;
+}
+
+
+message LoginReply {
+    string token = 1;
+    string secret = 2;
 }
